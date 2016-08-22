@@ -1,0 +1,9 @@
+- name: Install i3
+  pacman: name=i3 state=present
+  become: True
+
+- name: i3 config
+  copy: src=files/i3/config dest=~/.i3/config
+
+- name: goi3bar config
+  copy: src=files/i3/config.json dest=~/.i3/config.json

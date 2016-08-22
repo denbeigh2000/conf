@@ -1,0 +1,17 @@
+- name: Install
+  pacman: name=vim state=present
+
+- name: .vimrc
+  template: src=vimrc dest=~/.vimrc
+
+- name: .vim
+  file: path=~/.vim state=directory mode=755
+
+- name: ftplugin config
+  copy: src=files/ftplugin dest=~/.vim/ mode=755
+
+- include: vundle.yaml
+
+- name: Install ctags  # Required for Tagbar
+  pacman: name=ctags state=present
+  become: yes

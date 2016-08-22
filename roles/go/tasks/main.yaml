@@ -1,0 +1,13 @@
+- name: Install
+  pacman: name=go state=present
+  become: True
+
+- name: Create GOPATH
+  file: "path={{go.gopath}} recurse=true state=directory"
+  when: is_work == False
+
+- name: Install vim-go plugins
+  shell: vim +GoInstallBinaries +qall
+
+- name: Install tools
+  shell: "GOPATH={{go.gopath}} go get -u golang.org/x/tools/..."

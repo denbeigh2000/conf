@@ -1,0 +1,11 @@
+region: usa
+pacman:
+  packages:
+    - python2
+    - vim
+    - ntfs-3g
+    - sshfs
+    - sudo
+    - xclip
+    - zip
+  extra_packages: []

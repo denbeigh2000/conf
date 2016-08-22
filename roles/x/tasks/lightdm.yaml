@@ -1,0 +1,7 @@
+- name: Install LightDM
+  pacman: name=lightdm,lightdm-gtk-greeter state=present
+  become: True
+
+- name: Set LightDM as default greeter
+  shell: systemctl enable lightdm.service
+  become: True

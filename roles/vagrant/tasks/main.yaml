@@ -1,0 +1,4 @@
+- name: Install virtualbox guest modules
+  pacman: name=virtualbox-guest-dkms,virtualbox-guest-utils state=present
+  when: (username == "vagrant")
+  become: True

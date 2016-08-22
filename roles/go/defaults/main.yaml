@@ -1,0 +1,3 @@
+is_work: False
+go:
+  gopath: ~/dev/go

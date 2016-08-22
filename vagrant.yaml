@@ -1,0 +1,17 @@
+- name: vagrant bootstrap
+  hosts: all
+  roles:
+    # - x
+    - vagrant
+    - pacman
+    - git
+    - zsh
+    - vim
+    - go
+  vars:
+    git:
+      email: denbeigh@denbeighstevens.com
+      name: Denbeigh Stevens
+    username: vagrant
+    # x:
+    #   driver: virtualbox

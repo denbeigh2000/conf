@@ -1,0 +1,8 @@
+- name: Create Vundle directory
+  file: path=~/.vim/bundle state=directory mode=755
+
+- name: Clone Vundle
+  git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
+
+- name: Vundle install
+  shell: vim +PluginInstall +qall

@@ -1,0 +1,5 @@
+- name: Install
+  pacman: name=git state=present
+
+- name: gitconfig
+  template: src=gitconfig dest=~/.gitconfig

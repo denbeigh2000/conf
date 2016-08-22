@@ -1,0 +1,17 @@
+- name: Install
+  pacman: name=zsh state=present
+
+- name: Clone oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+
+# TODO: Make zsh default shell
+
+- name: zshrc
+  template: src=zshrc dest=~/.zshrc
+
+- name: aliases
+  copy: src=files/zshaliases dest=~/.zshaliases mode=755
+
+- name: zsh default shell
+  user: "user={{username}} shell=/usr/bin/zsh"
+  become: yes

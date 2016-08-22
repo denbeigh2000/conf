@@ -1,0 +1,3 @@
+- include: driver.yaml
+- include: lightdm.yaml
+- include: i3.yaml

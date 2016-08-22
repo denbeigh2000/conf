@@ -1,0 +1,15 @@
+- name: pacman.conf
+  copy: src=files/pacman/pacman.conf dest=/etc/pacman.conf
+  become: True
+
+- name: mirrorlist
+  copy: "src=files/pacman/mirrorlists/{{region}}.mirrorlist dest=/etc/pacman.d/mirrorlist"
+  become: True
+
+- name: System-wide upgrade
+  pacman: update_cache=yes upgrade=yes
+  become: True
+
+- name: Install packages
+  pacman: "name={{ pacman.packages | union(pacman.extra_packages) | join(',')}} state=present"
+  become: True

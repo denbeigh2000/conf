@@ -1,0 +1,11 @@
+# vi: ft=gitconfig
+[user]
+    name = {{git.name}}
+    email = {{git.email}}
+[core]
+    # No changing editor for you.
+    editor = vim
+[merge]
+    tool = vimdiff
+[push]
+    default = simple

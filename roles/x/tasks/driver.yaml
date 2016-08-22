@@ -1,0 +1,14 @@
+- name: Install intel driver
+  pacman: name=xf86-video-intel,mesa-libgl state=present
+  when: x.driver == "intel"
+  become: True
+
+- name: Install nvidia driver
+  pacman: name=nvidia,nvidia-libgl state=present
+  when: x.driver == "nvidia"
+  become: True
+
+- name: Install VB Guest additions
+  pacman: name=virtualbox-guest-modules-arch,virtualbox-guest-utils state=present
+  when: x.driver == "virtualbox"
+  become: True
