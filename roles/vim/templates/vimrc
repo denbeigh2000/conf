@@ -24,15 +24,18 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'wincent/Command-T'
 Plugin 'Yggdroot/indentLine'
 
-" Syntax highlighting
+" Syntax Highlighting
 Plugin 'chrisbra/csv.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
 Plugin 'groenewege/vim-less'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'rodjek/vim-puppet'
 Plugin 'solarnz/thrift.vim'
 
-" Color schemes
+" Colour schemes
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'morhetz/gruvbox'
 Plugin 'nanotech/jellybeans.vim'
@@ -54,6 +57,10 @@ syntax on
 set hlsearch
 set incsearch
 set showmatch
+
+" Tab-completion options
+set wildmenu
+set wildmode=longest,list,full
 
 " Default indentation
 set shiftwidth=4
