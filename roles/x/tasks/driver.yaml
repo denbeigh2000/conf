@@ -9,6 +9,6 @@
   become: True
 
 - name: Install VB Guest additions
-  pacman: name=virtualbox-guest-modules-arch,virtualbox-guest-utils state=present
+  pacman: name=virtualbox-guest-dkms,virtualbox-guest-utils state=present
   when: x.driver == "virtualbox"
   become: True
